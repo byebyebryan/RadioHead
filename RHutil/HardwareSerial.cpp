@@ -4,9 +4,9 @@
 // $Id: HardwareSerial.cpp,v 1.3 2015/08/13 02:45:47 mikem Exp mikem $
 
 #include <RadioHead.h>
-#if (RH_PLATFORM == RH_PLATFORM_UNIX)
+#if (RH_PLATFORM == RH_PLATFORM_UNIX || RH_PLATFORM == RH_PLATFORM_RASPI)
 
-#include <HardwareSerial.h>
+#include "HardwareSerial.h"
 
 #include <string.h>
 #include <unistd.h>
