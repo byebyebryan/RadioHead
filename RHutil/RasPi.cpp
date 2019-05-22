@@ -126,8 +126,8 @@ void delay (unsigned long ms)
   //Implement Delay function
   struct timespec ts;
   ts.tv_sec=0;
-  ts.tv_nsec=(ms * 1000);
-  nanosleep(&ts,&ts);
+  ts.tv_nsec=(ms * 1000000ul);
+  if(nanosleep(&ts,&ts) < 0) printf("ERR - failed to sleep\n");
 }
 
 long random(long min, long max)
